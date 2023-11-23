@@ -1,8 +1,17 @@
-const miParser = require('./gramatica.js');
-const miCodigo = `x = 5 + 8`;
-try {
-    const resultado = miParser.parse(miCodigo); // reemplaza "a" con la cadena que quieras analizar
-    console.log("Resultado:", resultado.value);
-} catch (error) {
-    console.error("Error de análisis:", error.message);
+function analizarCodigo() {
+    const codigo = document.getElementById('codigo').value;
+    try {
+        const resultado = miParser.parse(codigo);
+        document.getElementById('resultado').innerText = "Resultado: " + resultado.value;
+    } catch (error) {
+        document.getElementById('resultado').innerText = "Error de análisis: " + error.message;
+    }
 }
+
+document.getElementById('modoOscuro').addEventListener('change', function(event) {
+    if (event.target.checked) {
+        document.body.classList.add('modo-oscuro');
+    } else {
+        document.body.classList.remove('modo-oscuro');
+    }
+});

@@ -545,7 +545,7 @@ function peg$parse(input, options) {
   }
 }
 
-module.exports = {
+var miParser = {
   SyntaxError: peg$SyntaxError,
   parse:       peg$parse
 };

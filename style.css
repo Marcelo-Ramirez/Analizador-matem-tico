@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 800px;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Estilo para el switch del modo oscuro */
+.switch input { 
+    display: none;
+}
+
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Estilos para el modo oscuro */
+body.modo-oscuro {
+    background-color: #333;
+    color: white;
+}
+
+body.modo-oscuro textarea,
+body.modo-oscuro button {
+    background-color: #555;
+    color: white;
+}

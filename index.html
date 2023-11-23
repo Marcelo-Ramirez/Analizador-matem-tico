@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Analizador con Gramática</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Analizador con Gramática</h1>
+        <label class="switch">
+            <input type="checkbox" id="modoOscuro">
+            <span class="slider round"></span>
+        </label>
+        <textarea id="codigo" rows="10" cols="50"></textarea>
+        <br>
+        <button onclick="analizarCodigo()">Analizar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script src="gramatica.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
