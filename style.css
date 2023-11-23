@@ -12,37 +12,72 @@ body {
 .contenedor {
     width: 90%;
     max-width: 800px;
+    padding: 20px; /* Agrega espacio alrededor del contenido */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
 textarea {
-    width: 100%;
-    margin-bottom: 10px;
+    width: 100%; /* Ancho completo del contenedor */
+    height: 150px; /* Altura inicial */
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    resize: vertical; /* Permite al usuario ajustar la altura del área de texto */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    margin-bottom: 20px; /* Aumenta este valor para más espacio */
+}
+
+button {
+    background-color: #2196F3; /* Color de fondo azul */
+    border: none; /* Sin borde para un look más limpio */
+    color: white; /* Texto blanco para mayor contraste */
+    padding: 10px 20px; /* Espaciado interno para el botón */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave al cambiar colores */
+    margin-top: 20px; /* Añade un margen superior para separarlo del área de texto */
+}
+
+button:hover {
+    background-color: #0b7dda; /* Color de fondo más oscuro al pasar el mouse */
 }
 
 .switch {
     position: absolute;
     top: 10px;
     right: 10px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    border-radius: 34px; /* Bordes redondeados para el switch */
 }
 
-/* Estilo para el switch del modo oscuro */
 .switch input { 
-    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.switch .slider {
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #ccc; /* Color de fondo del slider */
     transition: .4s;
-    border-radius: 34px;
+    border-radius: 34px; /* Bordes redondeados */
 }
 
-.switch .slider:before {
+.slider:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -51,25 +86,26 @@ textarea {
     bottom: 4px;
     background-color: white;
     transition: .4s;
-    border-radius: 50%;
+    border-radius: 50%; /* Forma redonda del deslizador */
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #2196F3; /* Color de fondo cuando está activado */
 }
 
 input:checked + .slider:before {
-    transform: translateX(26px);
+    transform: translateX(26px); /* Desplazamiento del deslizador cuando está activado */
 }
 
 /* Estilos para el modo oscuro */
 body.modo-oscuro {
-    background-color: #333;
-    color: white;
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Texto claro */
 }
 
 body.modo-oscuro textarea,
 body.modo-oscuro button {
-    background-color: #555;
-    color: white;
+    background-color: #555; /* Fondo de elementos más oscuro */
+    color: white; /* Texto claro en elementos */
+    border: 1px solid #777; /* Borde ligeramente más oscuro para elementos */
 }
