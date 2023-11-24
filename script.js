@@ -4,6 +4,7 @@ function analizarCodigo() {
         const resultado = miParser.parse(codigo);
         if(resultado.value == undefined){
             document.getElementById('resultado').innerText = "Resultado: " + resultado;         
+            console.log(resultado)
         }else{
             document.getElementById('resultado').innerText = "Resultado: " + resultado.value;
         }
