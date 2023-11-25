@@ -1,29 +1,38 @@
+{
+  const variables = {};
+}
+
 start
-  = statements:statement+ { return statements; }
+  = statement+{return variables["print"]}
 
 statement
-  = identifier:identifier _ "=" _ expression:expression _ { return { type: 'assignment', identifier, expression }; }
+  = variable:identifier _ "=" _ expression:expression _ {
+      variables[variable] = expression;
+    } 
+    / "print(" _ value: identifier _ ")" {return variables["print"] = value}
+    /expression
 
 expression
-  = left:term _ "+" _ right:expression { return { type: 'operation', operator: '+', left, right }; }
-  / left:term _ "-" _ right:expression { return { type: 'operation', operator: '-', left, right }; }
+  = left:term _ "+" _ right:expression { return left + right; }
+  / left:term _ "-" _ right:expression { return left - right; }
   / term
 
 term
-  = left:factor _ "*" _ right:term { return { type: 'operation', operator: '*', left, right }; }
-  / left:factor _ "/" _ right:term { return { type: 'operation', operator: '/', left, right }; }
+  = left:factor _ "*" _ right:term { return left * right; }
+  / left:factor _ "/" _ right:term { return left / right; }
   / factor
 
 factor
   = integer
-  / variable:identifier { return { type: 'variable', name: variable }; }
+  / identifier
   / "(" _ expression:expression _ ")" { return expression; }
 
 integer
-  = digits:[0-9]+ { return { type: 'number', value: parseInt(digits.join(""), 10) }; }
+  = digits:[0-9]+ { return parseInt(digits.join(""), 10); }
 
-identifier
-  = name:[a-zA-Z_][a-zA-Z0-9_]* { return name; }
+identifier "identificador"
+  = name:[a-zA-Z_][a-zA-Z0-9_]* { if(variables[name] == undefined)return name
+                                  return variables[name] }
 
-_ "whitespace"
+_ 
   = [ \t\r\n]*
