@@ -1,0 +1,23 @@
+{
+  "name": "Analizador-matem-tico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gramatica.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcelo-Ramirez/Analizador-matem-tico.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marcelo-Ramirez/Analizador-matem-tico/issues"
+  },
+  "homepage": "https://github.com/Marcelo-Ramirez/Analizador-matem-tico#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
