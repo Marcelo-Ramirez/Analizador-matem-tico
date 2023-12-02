@@ -73,7 +73,7 @@ button:hover {
     cursor: pointer;
     top: 0;
     left: 0;
-    right: 0;
+    right: 1px;
     bottom: 0;
     background-color: #ccc; /* Color de fondo del slider */
     transition: .4s;
@@ -163,3 +163,68 @@ body.modo-oscuro button:hover {
     left: 30px;
     float: right; /* Coloca el logo a la derecha */
 }
+
+@media (max-width: 1080px) {
+    body {
+        justify-content: flex-start; /* Ajusta esto según tus necesidades */
+        align-items: flex-start; /* Ajusta esto según tus necesidades */
+    }
+    
+    /* Ajusta el tamaño del texto de otros elementos según sea necesario */
+    .contenedor {
+        font-size: 200%;
+        padding-top: 30%;
+        padding-left: 10%;
+    }
+    .titulos{
+        top: 10px;
+    }
+    
+    textarea {
+      font-size: 100%;
+    }
+  
+    button {
+      font-size: 100%;
+    }
+  
+    .switch {
+      font-size: 2em;
+    }
+
+
+    .logo {
+        width: 50%; /* Ajusta el ancho del logo según sea necesario */
+        height: auto; /* Mantiene la proporción original de la imagen */
+        position: absolute;
+        top: 40px; /* Distancia desde la parte superior de la página */
+        left: 40px; /* Distancia desde el borde izquierdo de la página */
+        float: right;
+    }
+    
+    .python-logo {
+        width: 5%; /* Ajusta el ancho según sea necesario */
+        height: auto; /* Mantiene la proporción original de la imagen */
+        margin-left: 10px; /* Espaciado a la izquierda del logo */
+    }
+    
+    .switch{
+        top: 5%;
+        width: 100px;
+        height: 50px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 50px;
+        width: 50px;
+        left: 14px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%; /* Forma redonda del deslizador */
+    }
+    
+  }
+  
